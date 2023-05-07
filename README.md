@@ -1,7 +1,3 @@
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-# Baileys Up To Date
- 
-
 ```
 const connectionOptions = {
 printQRInTerminal: true, // memunculkan qr di terminal
