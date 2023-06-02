@@ -86,7 +86,7 @@
     "eslint": "^8.0.0",
     "jest": "^27.0.6",
     "jimp": "^0.16.1",
-    "link-preview-js": "^3.0.0",
+    "link-preview-js": "github:ospfranco/link-preview-js",
     "qrcode-terminal": "^0.12.0",
     "sharp": "^0.30.5",
     "ts-jest": "^27.0.3",
