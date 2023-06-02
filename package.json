@@ -17,7 +17,7 @@
     "automation",
     "multi-device",
     "BOTCAHX",
-    "Baileys"
+    "Baileyss"
   ],
   "scripts": {
     "test": "jest",
@@ -47,7 +47,7 @@
     "ws": "^8.0.0"
   },
   "peerDependencies": {
-    "@adiwajshing/keyed-db": "^0.2.4",
+    "@adiwajshing/keyed-db": "git+https://github.com/hostinger-bot/keyed-db.git",
     "jimp": "^0.16.1",
     "link-preview-js": "^3.0.0",
     "qrcode-terminal": "^0.12.0",
@@ -77,7 +77,7 @@
   ],
   "devDependencies": {
     "@adiwajshing/eslint-config": "git+https://github.com/hostinger-bot/eslint-config.git",
-    "@adiwajshing/keyed-db": "^0.2.4",
+    "@adiwajshing/keyed-db": "github:hostinger-bot/keyed-db",
     "@types/got": "^9.6.11",
     "@types/jest": "^27.5.1",
     "@types/node": "^16.0.0",
