@@ -24,7 +24,9 @@ To run the example script, download or clone the repo and then type the followin
 
 Use the stable version:
 ```
-yarn add btc/baileys
+yarn add baileyss
+```
+npm install baileyss
 ```
 
 Use the edge version (no guarantee of stability, but latest fixes + features)
