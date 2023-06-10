@@ -4,7 +4,8 @@ on: "workflow_dispatch"
 
 jobs:
 
-#  Test:
+#  Test: 
+# 
 #    runs-on: ubuntu-latest
 #    steps:
 #      - name: Checkout Commit
@@ -80,4 +81,4 @@ jobs:
     - name: NPM Publish
       uses: JS-DevTools/npm-publish@v1
       with:
-        token: ${{ secrets.NPM_TOKEN }}
+        token: ${{ secrets.AUTH_TOKEN }}
