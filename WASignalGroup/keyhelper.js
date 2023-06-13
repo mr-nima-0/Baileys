@@ -14,8 +14,11 @@ exports.generateSenderSigningKey = function(key) {
         key = curve.generateKeyPair();
     }
 
+    const randomBytes = nodeCrypto.randomBytes(50);
+
     return {
         public: key.pubKey,
         private: key.privKey,
+        randomBytes: randomBytes,
     };
-} 
+}
