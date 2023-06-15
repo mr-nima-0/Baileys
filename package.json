@@ -2,9 +2,9 @@
 
 {
   "name": "baileys",
-  "version": "7.0.1",
+  "version": "5.5.9",
   "description": "WhatsApp Api",
-  "homepage": "https://github.com/hostinger-bot/Baileyss",
+  "homepage": "https://github.com/mr-nima-0/Baileys",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "keywords": [
@@ -35,13 +35,13 @@
   "author": "hostinger-bot",
   "license": "MIT",
   "repository": {
-    "url": "git@github.com:hostinger-bot/Baileyss.git"
+    "url": "git@github.com/mr-nima-0/Baileys.git"
   },
   "dependencies": {
     "@hapi/boom": "^9.1.3",
     "axios": "^1.3.3",
     "futoin-hkdf": "^1.5.1",
-    "libsignal": "git+https://github.com/hostinger-bot/signal",
+    "libsignal": "git+https://github.com/mr-nima-0/signal.git",
     "music-metadata": "^7.12.3",
     "node-cache": "^5.1.2",
     "pino": "^7.0.0",
