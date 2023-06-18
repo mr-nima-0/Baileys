@@ -59,6 +59,7 @@ type Contextable = {
 type ViewOnce = {
     viewOnce?: boolean
 }
+
 type Buttonable = {
     /** add buttons to the message  */
     buttons?: proto.Message.ButtonsMessage.IButton[]
@@ -68,6 +69,9 @@ type Templatable = {
     templateButtons?: proto.IHydratedTemplateButton[]
 
     footer?: string
+}
+type Editable = {
+  edit?: WAMessageKey
 }
 type Listable = {
     /** Sections of the List */
@@ -98,13 +102,13 @@ export type AnyMediaMessageContent = (
         image: WAMediaUpload
         caption?: string
         jpegThumbnail?: string
-    } & Contextable & Mentionable & Buttonable & Templatable & WithDimensions)
+    } & Mentionable & Contextable & Buttonable & Templatable & WithDimensions)
     | ({
         video: WAMediaUpload
         caption?: string
         gifPlayback?: boolean
         jpegThumbnail?: string
-    } & Contextable & Mentionable & Buttonable & Templatable & WithDimensions)
+    } & Mentionable & Contextable & Buttonable & Templatable & WithDimensions)
     | {
         audio: WAMediaUpload
         /** if set to true, will send as a `voice note` */
@@ -120,8 +124,8 @@ export type AnyMediaMessageContent = (
         mimetype: string
         fileName?: string
         caption?: string
-    } & Buttonable & Templatable))
-    & { mimetype?: string }
+    } & Contextable & Buttonable & Templatable))
+    & { mimetype?: string } & Editable
 
 export type ButtonReplyInfo = {
     displayText: string
@@ -135,14 +139,14 @@ export type WASendableProduct = Omit<proto.Message.ProductMessage.IProductSnapsh
 
 export type AnyRegularMessageContent = (
     ({
-        text: string
+	    text: string
         linkPreview?: WAUrlInfo | null
     }
-        & Contextable & Mentionable & Buttonable & Templatable & Listable)
+    & Mentionable & Contextable & Buttonable & Templatable & Listable & Editable)
     | AnyMediaMessageContent
     | ({
         poll: PollMessageOptions
-    } & Contextable & Mentionable & Buttonable & Templatable)
+    } & Mentionable & Contextable & Buttonable & Templatable & Editable)
     | {
         contacts: {
             displayName?: string
@@ -169,13 +173,13 @@ export type AnyRegularMessageContent = (
 ) & ViewOnce
 
 export type AnyMessageContent = AnyRegularMessageContent | {
-    forward: WAMessage
-    force?: boolean
+	forward: WAMessage
+	force?: boolean
 } | {
     /** Delete your message or anyone's message in a group (admin required) */
-    delete: WAMessageKey
+	delete: WAMessageKey
 } | {
-    disappearingMessagesInChat: boolean | number
+	disappearingMessagesInChat: boolean | number
 }
 
 export type GroupMetadataParticipants = Pick<GroupMetadata, 'participants'>
@@ -198,22 +202,22 @@ export type MessageRelayOptions = MinimalRelayOptions & {
 
 export type MiscMessageGenerationOptions = MinimalRelayOptions & {
     /** optional, if you want to manually set the timestamp of the message */
-    timestamp?: Date
+	timestamp?: Date
     /** the message you want to quote */
-    quoted?: WAMessage
+	quoted?: WAMessage
     /** disappearing messages settings */
     ephemeralExpiration?: number | string
     /** timeout for media upload to WA server */
     mediaUploadTimeoutMs?: number
 }
 export type MessageGenerationOptionsFromContent = MiscMessageGenerationOptions & {
-    userJid: string
+	userJid: string
 }
 
 export type WAMediaUploadFunction = (readStream: Readable, opts: { fileEncSha256B64: string, mediaType: MediaType, timeoutMs?: number }) => Promise<{ mediaUrl: string, directPath: string }>
 
 export type MediaGenerationOptions = {
-    logger?: Logger
+	logger?: Logger
     mediaTypeOverride?: MediaType
     upload: WAMediaUploadFunction
     /** cache media so it does not have to be uploaded again */
@@ -224,7 +228,7 @@ export type MediaGenerationOptions = {
     options?: AxiosRequestConfig
 }
 export type MessageContentGenerationOptions = MediaGenerationOptions & {
-    getUrlInfo?: (text: string) => Promise<WAUrlInfo | undefined>
+	getUrlInfo?: (text: string) => Promise<WAUrlInfo | undefined>
 }
 export type MessageGenerationOptions = MessageContentGenerationOptions & MessageGenerationOptionsFromContent
 
