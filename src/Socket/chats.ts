@@ -782,7 +782,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 			}
 		}, jid)
 	}
-
+/*
 	/**
 	 * Removes label for the chat
 	 */
@@ -817,7 +817,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 			}
 		}, jid)
 	}
-
+*/
 	/**
 	 * queries need to be fired on connection open
 	 * help ensure parity with WA Web
@@ -952,16 +952,16 @@ export const makeChatsSocket = (config: SocketConfig) => {
 				)
 		}
 
-		if(receivedPendingNotifications) {
-			// if we don't have the app state key
-			// we keep buffering events until we finally have
-			// the key and can sync the messages
-			if(!authState.creds?.myAppStateKeyId && !config.mobile) {
-				ev.buffer()
-				needToFlushWithAppStateSync = true
-			}
-		}
-	})
+		if (receivedPendingNotifications) {
+            // if we don't have the app state key
+            // we keep buffering events until we finally have
+            // the key and can sync the messages
+            if (!((_a = authState.creds) === null || _a === void 0 ? void 0 : _a.myAppStateKeyId)) {
+                ev.buffer();
+                needToFlushWithAppStateSync = true;
+            }
+        }
+    })
 
 	return {
 		...sock,
