@@ -1,15 +1,15 @@
 
 
 {
-  "name": "baileys",
-  "version": "5.5.9",
+  "name": "mrnima-baileys",
+  "version": "6.0.3",
   "description": "WhatsApp Api",
-  "homepage": "https://github.com/mr-nima-0/Baileys",
+  "homepage": "https://github.com/mr-nima-x/Baileys",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "keywords": [
     "whatsapp",
-    "hostinger-bot",
+ 
     "js-whatsapp",
     "whatsapp-api",
     "whatsapp-web",
@@ -18,7 +18,7 @@
     "whatsapp-group",
     "automation",
     "multi-device",
-    "BOTCAHX",
+    "QUEEN-ELISA",
     "Baileys"
   ],
   "scripts": {
@@ -32,10 +32,10 @@
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
     "lint:fix": "eslint . --fix --ext .js,.ts,.jsx,.tsx"
   },
-  "author": "hostinger-bot",
+  "author": "MR-NIMA",
   "license": "MIT",
   "repository": {
-    "url": "git@github.com/mr-nima-0/Baileys.git"
+    "url": "git@github.com/mr-nima-x/Baileys.git"
   },
   "dependencies": {
     "@hapi/boom": "^9.1.3",
