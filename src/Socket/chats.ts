@@ -786,6 +786,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 	/**
 	 * Removes label for the chat
 	 */
+	 /*
 	const removeChatLabel = (jid: string, labelId: string) => {
 		return chatModify({
 			removeChatLabel: {
@@ -793,10 +794,11 @@ export const makeChatsSocket = (config: SocketConfig) => {
 			}
 		}, jid)
 	}
-
+*/
 	/**
 	 * Adds label for the message
 	 */
+	 /*
 	const addMessageLabel = (jid: string, messageId: string, labelId: string) => {
 		return chatModify({
 			addMessageLabel: {
@@ -805,10 +807,11 @@ export const makeChatsSocket = (config: SocketConfig) => {
 			}
 		}, jid)
 	}
-
+*/
 	/**
 	 * Removes label for the message
 	 */
+	
 	const removeMessageLabel = (jid: string, messageId: string, labelId: string) => {
 		return chatModify({
 			removeMessageLabel: {
