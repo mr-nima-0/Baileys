@@ -820,7 +820,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 			}
 		}, jid)
 	}
-*/
+
 	/**
 	 * queries need to be fired on connection open
 	 * help ensure parity with WA Web
